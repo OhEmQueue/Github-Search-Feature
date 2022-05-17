@@ -1,0 +1,9 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Search term for repos</mat-label>
+      <input matInput #message maxlength="256" placeholder="Ex. I am searching for..." [(ngModel)]="searchquery">
+      <mat-hint align="start"><strong></strong> </mat-hint>
+      <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+    </mat-form-field>
+  </form>
+  

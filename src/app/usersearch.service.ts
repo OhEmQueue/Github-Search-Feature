@@ -19,7 +19,9 @@ export class UsersearchService {
   
   constructor(private http:HttpClient) { }
 
-  getUserData(searchUquery: string) :Observable<UserRepoModel[]> { 
-    return this.http.get<UserRepoModel[]>("https://api.github.com/users/" + searchUquery);
+  getUserData(searchUquery: string) :Observable<UserRepoModel> { 
+    return this.http.get<UserRepoModel>("https://api.github.com/users/" + searchUquery) //.pipe(map(result => result));
+    //let jType: Array<Object> = Object.entries(jtype);
+    //return jType;
   }
 }

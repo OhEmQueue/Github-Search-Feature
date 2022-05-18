@@ -26,11 +26,11 @@ import { UserRepoModel, UsersearchService } from '../usersearch.service';
 
 export class UserSearchBarComponent {
   public searchUquery: string = '';
-  public searchUResults: UserRepoModel[] = [];
+  public searchUResults!: UserRepoModel;
   constructor(private usersearchService:UsersearchService) { }
 
   getUserRepos() {
-    this.usersearchService.getUserData(this.searchUquery).subscribe((results: UserRepoModel[]) => {
+    this.usersearchService.getUserData(this.searchUquery).subscribe((results: UserRepoModel) => {
       console.log("HIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
       console.log(results)
       this.searchUResults = results

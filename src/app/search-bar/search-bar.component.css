@@ -37,3 +37,12 @@ span {
   margin: 10px 20px 35px;
   width: 48%;
 }
+
+nav {
+  margin: 20px 0px 20px 20px;
+}
+
+nav a {
+  text-decoration: none;
+  margin-left: 20px;
+}

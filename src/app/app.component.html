@@ -1,3 +1,5 @@
-<h2>Search for Repositories</h2>
-<app-search-bar></app-search-bar>
-<button (click)="getRepos()">Get Repos</button>
+<nav>
+    <a routerLink="/repos">Search by Repositories</a>
+    <a routerLink="/users">Search by User</a>
+  </nav>
+<router-outlet></router-outlet>

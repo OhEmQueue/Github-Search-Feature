@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { RepoModel, SearchService } from '../search.service';
+
 
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css']
 })
-export class SearchBarComponent implements OnInit {
+
+export class SearchBarComponent {
   public searchquery: string = '';
-  constructor() { }
+  public searchResults: RepoModel[] = [];
+  constructor(private searchService:SearchService) { }
 
-  ngOnInit(): void {
+  getRepos() {
+    this.searchService.getData(this.searchquery).subscribe((results: RepoModel[]) => {
+      console.log("HIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
+      console.log(results)
+      this.searchResults = results
+      console.log("BYE")
+      console.log(this.searchResults)
+    })
   }
-
 }

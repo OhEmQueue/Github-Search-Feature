@@ -1,9 +1,22 @@
-<form class="example-form">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Search term for repos</mat-label>
-      <input matInput #message maxlength="256" placeholder="Ex. I am searching for..." [(ngModel)]="searchquery">
-      <mat-hint align="start"><strong></strong> </mat-hint>
-      <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-    </mat-form-field>
-  </form>
+<h2>Search for Repositories</h2>
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Search term for repos</mat-label>
+    <input matInput #message maxlength="256" placeholder="Ex. I am searching for..." [(ngModel)]="searchquery">
+    <mat-hint align="start"><strong></strong> </mat-hint>
+    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+</mat-form-field>
+<br>
+<button (click)="getRepos()">Get Repos</button>
   
+
+<mat-card class="example-card" *ngFor="let item of searchResults">
+    <mat-card-title >{{item.full_name}}</mat-card-title>
+    <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
+    <mat-card-content>
+      <p>{{item.topics}}</p>
+      <span>{{item.stargazers_count}} stars</span>&nbsp;&nbsp;
+      <span>{{item.language}}</span>&nbsp;&nbsp;
+      <span>Updated by {{item.updated_at | date: 'MMMM d, y'}}</span>&nbsp;&nbsp;
+    </mat-card-content>
+</mat-card><br>
+<br>

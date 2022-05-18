@@ -7,23 +7,32 @@ import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import { SearchService } from './search.service';
+import { AppRoutingModule } from './app-routing.module';
+import { UserSearchBarComponent } from './user-search-bar/user-search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    UserSearchBarComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatInputModule,
-    FormsModule
+    MatCardModule,
+    FormsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    SearchService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

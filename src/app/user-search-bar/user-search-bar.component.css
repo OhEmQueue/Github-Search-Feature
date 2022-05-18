@@ -1,0 +1,39 @@
+h2 {
+    margin: 30px 10px 10px 20px;
+  
+  }
+  
+  .example-form {
+      min-width: 150px;
+      max-width: 500px;
+      width: 100%;
+    }
+    
+  .example-full-width {
+      width: 50%;
+    }
+  
+  .mat-form-field {
+      margin: 20px 20px 5px 20px;
+    }
+  
+  button {
+      padding: 8px;
+      margin: 5px 20px 20px 20px;
+      background-color: #009688;
+      color: white;
+      border-color: transparent;
+      border-radius: 3px;
+  }
+  
+  span {
+    border: 1px solid green;
+    border-radius: 4px;
+    padding: 4px;
+  }
+  
+  .mat-card {
+    background-color: aliceblue;
+    margin: 10px 20px 35px;
+    width: 48%;
+  }

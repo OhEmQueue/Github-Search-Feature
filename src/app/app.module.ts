@@ -9,6 +9,9 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { SearchService } from './search.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +30,9 @@ import { UserSearchBarComponent } from './user-search-bar/user-search-bar.compon
     BrowserAnimationsModule,
     MatInputModule,
     MatCardModule,
+    MatPaginatorModule,
+    MatChipsModule,
+    MatIconModule,
     FormsModule,
     AppRoutingModule
   ],

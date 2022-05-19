@@ -15,7 +15,7 @@
 //}
 
 import { Component } from '@angular/core';
-import { UserRepoModel, UsersearchService } from '../usersearch.service';
+import { UserRepoModel, SearchService } from '../search.service';
 
 
 @Component({
@@ -27,14 +27,12 @@ import { UserRepoModel, UsersearchService } from '../usersearch.service';
 export class UserSearchBarComponent {
   public searchUquery: string = '';
   public searchUResults!: UserRepoModel;
-  constructor(private usersearchService:UsersearchService) { }
+  constructor(private usersearchService:SearchService) { }
 
   getUserRepos() {
     this.usersearchService.getUserData(this.searchUquery).subscribe((results: UserRepoModel) => {
-      console.log("HIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
       console.log(results)
       this.searchUResults = results
-      console.log("BYE")
       console.log(this.searchUResults)
     })
   }

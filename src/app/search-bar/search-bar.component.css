@@ -46,3 +46,7 @@ nav a {
   text-decoration: none;
   margin-left: 20px;
 }
+
+.mat-icon {
+  margin-top: 7px;
+}

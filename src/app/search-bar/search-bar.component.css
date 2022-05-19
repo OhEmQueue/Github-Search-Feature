@@ -50,3 +50,11 @@ nav a {
 .mat-icon {
   margin-top: 7px;
 }
+
+.mat-paginator {
+  display: block;
+  position: sticky;
+  bottom: 10%;
+  width: 45%;
+  margin-left: 55%;
+}

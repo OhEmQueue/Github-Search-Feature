@@ -3,7 +3,7 @@
     <mat-label>Search term for repos</mat-label>
     <mat-chip-list #chipList aria-label="Repo search">
       <mat-chip *ngFor="let term of terms" (removed)="remove(term)">
-        {{term.name}}
+        {{term}}
         <button matChipRemove>
           <mat-icon>cancel</mat-icon>
         </button>

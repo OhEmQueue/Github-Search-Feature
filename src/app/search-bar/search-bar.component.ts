@@ -39,21 +39,21 @@ export class SearchBarComponent  implements OnInit, OnDestroy {
 
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
-  terms: Term[] = [];
+  terms: string[] = [];
 
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
 
     // Add our fruit
     if (value) {
-      this.terms.push({name: value});
+      this.terms.push(value);
     }
 
     // Clear the input value
     event.chipInput!.clear();
   }
 
-  remove(term: Term): void {
+  remove(term: string): void {
     const index = this.terms.indexOf(term);
 
     if (index >= 0) {
@@ -61,7 +61,7 @@ export class SearchBarComponent  implements OnInit, OnDestroy {
     }
   }
   getRepos() {
-    this.searchService.getRepoData(this.searchquery).subscribe((results: RepoModel[]) => {
+    this.searchService.getRepoData(this.terms).subscribe((results: RepoModel[]) => {
       console.log(results)
       this.searchResults = results
       console.log(this.searchResults)

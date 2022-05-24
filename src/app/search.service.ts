@@ -12,6 +12,15 @@ export interface RepoModel {
   updated_at: string;
 }
 
+export interface UserRepoModel {
+  login: string;
+  name: string; 
+  avatar_url: string; 
+  repos_url: string; 
+  bio: string; 
+  location: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,9 +28,17 @@ export class SearchService {
   
   constructor(private http:HttpClient) { }
 
-  getData(searchquery: string) :Observable<RepoModel[]> { 
+  getRepoData(searchquery: string[]) :Observable<RepoModel[]> { 
     const jsonType = this.http.get("https://api.github.com/search/repositories" + "?q=" + searchquery);
-    return this.http.get<{items: RepoModel[]}>("https://api.github.com/search/repositories" + "?q=" + searchquery).pipe(map(result => result.items));
+    let searchUrl = "https://api.github.com/search/repositories" + "?q=" + searchquery[0]
+    for (let i = 1; i < searchquery.length; i++) {
+      searchUrl = searchUrl + " " + searchquery[i];
+    }
+    return this.http.get<{items: RepoModel[]}>(searchUrl).pipe(map(result => result.items));
+  }
+
+  getUserData(searchUquery: string) :Observable<UserRepoModel> { 
+    return this.http.get<UserRepoModel>("https://api.github.com/users/" + searchUquery);
   }
 }
 

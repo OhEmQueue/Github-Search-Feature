@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { SearchComponent } from './search/search.component';
 //import { AppRoutingModule } from './app-routing,module';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchBarComponent } from './search-bar/search-bar.component';
@@ -20,7 +19,6 @@ import { UserSearchBarComponent } from './user-search-bar/user-search-bar.compon
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent,
     SearchBarComponent,
     UserSearchBarComponent
   ],
